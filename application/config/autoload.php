@@ -17,6 +17,12 @@ date_default_timezone_set('America/New_York');
 // General Purpose Functions
 // 
 
+// Debug
+function dd($var) {
+    var_dump($var);
+    die();
+}
+
 // Return if this is dev
 function site_name() {
     return 'Tribune';
