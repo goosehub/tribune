@@ -3,11 +3,12 @@
 ==========================================================================================
 
 High Priority
-	Pull Data
-	Listings
+	Pagination
 	Articles
 
 Moderate Priority
+	Stickies
+	Images
 	Radio
 	Print
 	Weather
@@ -19,6 +20,7 @@ Moderate Priority
 Low Priority
 	Ads
 	Per Site
+	Word swaps
 
 No Priority
 
