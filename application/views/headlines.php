@@ -17,9 +17,22 @@
 				<!-- Neither subject or comment exists -->
 				<?php } else { ?>
 					Your ad here
+					By Pepsi
 				<?php } ?>
 				<hr/>
 			</div>
 		</div>
 	<?php } ?>
+
+	<p class="text-center">
+		<?php if ($page > 1) { ?>
+			<a href="<?= base_url() . 'listing/' . ($page - 1); ?>">
+				Previous Page
+			</a>
+			|
+		<?php } ?>
+		<a href="<?= base_url() . 'listing/' . ($page + 1); ?>">
+			Next Page
+		</a>
+	</p>
 </div>

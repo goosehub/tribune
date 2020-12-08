@@ -10,8 +10,11 @@ class Main extends CI_Controller {
         $this->load->model('helper', '', TRUE);
     }
 
-    public function index($offset = 0, $limit = 1000)
+    public function index($page = 1)
     {
+        $data['page'] = $page;
+        $offset = ($page - 1) * PER_PAGE;
+        $limit = PER_PAGE;
         $data['posts'] = $this->fourchan->get_original_posts($offset, $limit);
 
         // Load view

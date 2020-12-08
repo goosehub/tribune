@@ -3,7 +3,6 @@
 ==========================================================================================
 
 High Priority
-	Pagination
 	Articles
 
 Moderate Priority

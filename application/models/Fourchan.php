@@ -15,17 +15,16 @@ Class fourchan extends CI_Model
     function get_original_posts($offset, $limit)
     {
         $threads = [];
-        $json_files = scandir($this->json_folder);
+        // Get all non hidden files
+        $json_files = array_values(preg_grep('/^([^.])/', scandir($this->json_folder)));
         // Loop, consdering limit, offset, and number of files
-        for ($i = $offset; $i <= $limit + $offset; $i++) {
+        for ($i = $offset; $i < $limit + $offset; $i++) {
+            // Catch
             if (!isset($json_files[$i])) {
+                dd('get_original_posts limit broke');
                 break;
             }
             $json_file = $json_files[$i];
-            // Ignore hidden files
-            if ($json_file[0] === '.') {
-                continue;
-            }
             $json_contents = file_get_contents($this->json_folder . $json_file);
             $thread = json_decode($json_contents);
             $threads[] = $thread->posts[0];
