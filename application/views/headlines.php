@@ -13,7 +13,7 @@
 					<br/>
 					<small><?= isset($post->now) ? $post->now : '' ?></small>
 					<p><?= isset($post->com) ? $post->com : '' ?></p>
-					<a href="s4s/<?= $post->no ?>/<?= $post->semantic_url ?>">Read More</a>
+					<a href="<?= base_url() ?>news/s4s/<?= $post->no ?>/<?= $post->semantic_url ?>">Read More</a>
 				<!-- Neither subject or comment exists -->
 				<?php } else { ?>
 					Your ad here

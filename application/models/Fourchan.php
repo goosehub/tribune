@@ -32,5 +32,11 @@ Class fourchan extends CI_Model
         return $threads;
     }
 
+    function get_thread($board, $thread_no)
+    {
+        $json_contents = file_get_contents($this->json_folder . $board . '_' . $thread_no . '.json');
+        return json_decode($json_contents);
+    }
+
 }
 ?>
