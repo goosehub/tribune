@@ -6,10 +6,11 @@
 					<div class="article_op text-center">
 						<h2><?= $this->helper->get_headline($post); ?></h2>
 						<p class="lead">
-							<small>Written by <?= isset($post->name) ? $post->name : '' ?></small>
-							<small>on <?= isset($post->now) ? $post->now : '' ?></small>
-							<img class="article_image img-thumbnail" src="<?= base_url() ?>uploads/<?= BOARD ?>_<?= $post->tim . $post->ext ?>"/>
+							<span>By <?= isset($post->name) ? $post->name : '' ?></span>
+							<span>|</span>
+							<small>Updated <?= isset($post->now) ? $post->now : '' ?></small>
 						</p>
+						<img class="article_image img-thumbnail" src="<?= base_url() ?>uploads/<?= BOARD ?>_<?= $post->tim . $post->ext ?>"/>
 						<p class="lead"><?= isset($post->com) ? $post->com : '' ?></p>
 					</div>
 				<?php } else if (isset($post->com)) { ?>
@@ -21,6 +22,8 @@
 			<?php } ?>
 		</div>
 	</div>
+	<hr>
+	<span><?= isset($post->name) ? $post->name : '' ?> is a reporter from /<?= BOARD ?>/</span>
 	<br>
 	<br>
 </div>

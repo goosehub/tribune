@@ -3,6 +3,7 @@
 body {
     background-color: #ff0000;
     color: #fff;
+    font-family: 'Faustina', sans-serif;
 }
 .container {
     background-color: #F8F8F8;
@@ -33,7 +34,6 @@ h2 {
 }
 .comment {
     font-size: 1.5em;
-    font-family: 'Faustina', sans-serif;
 }
 .quote {
     display: block;
