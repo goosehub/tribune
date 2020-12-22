@@ -14,38 +14,6 @@ $autoload['model'] = array();
 date_default_timezone_set('America/New_York');
 
 // 
-// Presentor Stuff
-// 
-
-function present_comment($text) {
-    return $text;
-
-    $stripped_text = strip_tags_content($text);
-    $prefix = '<br>';
-    $leading_br_stripped_text = preg_replace('/^' . preg_quote($prefix, '/') . '/', '', $stripped_text);
-    return $leading_br_stripped_text;
-}
-
-// https://www.php.net/manual/en/function.strip-tags.php#86964
-function strip_tags_content($text, $tags = '', $invert = FALSE) {
-  preg_match_all('/<(.+?)[\s]*\/?[\s]*>/si', trim($tags), $tags);
-  $tags = array_unique($tags[1]);
-   
-  if(is_array($tags) AND count($tags) > 0) {
-    if($invert == FALSE) {
-      return preg_replace('@<(?!(?:'. implode('|', $tags) .')\b)(\w+)\b.*?>.*?</\1>@si', '', $text);
-    }
-    else {
-      return preg_replace('@<('. implode('|', $tags) .')\b.*?>.*?</\1>@si', '', $text);
-    }
-  }
-  elseif($invert == FALSE) {
-    return preg_replace('@<(\w+)\b.*?>.*?</\1>@si', '', $text);
-  }
-  return $text;
-}
-
-// 
 // General Purpose Functions
 // 
 
