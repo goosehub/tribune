@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-md-3 col-md-push-1">
 				<a href="<?= base_url() ?>news/<?= BOARD ?>/<?= $post->no ?>/<?= $post->semantic_url ?>">
-					<img class="headline_image img-thumbnail" src="<?= base_url() ?>uploads/<?= BOARD ?>_<?= $post->tim . $post->ext ?>"/>
+					<img alt="<?= $this->helper->get_headline($post); ?>" class="headline_image img-thumbnail" src="<?= base_url() ?>uploads/<?= BOARD ?>_<?= $post->tim . $post->ext ?>"/>
 				</a>
 			</div>
 			<div class="col-md-7 col-md-push-1">

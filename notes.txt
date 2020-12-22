@@ -3,13 +3,10 @@
 ==========================================================================================
 
 High Priority
-	Articles
 
 Moderate Priority
 	Stickies
-	Images
 	Radio
-	Print
 	Weather
 	Markets
 	Election
@@ -68,7 +65,7 @@ Ads
 	Spiderman
 ==========================================================================================
 
-Images of any posts that contain the word spideerman and an image
+Images of any post or filename that contain the word spider
 
 ==========================================================================================
 	Markets

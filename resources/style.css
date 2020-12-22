@@ -1,37 +1,43 @@
-/* Global */
+/* Variables */
+:root {
+    --color-red-primary: #FF0000;
+    --color-red-light: #FF3939;
+    --color-red-dark: #C60000;
+    --color-black-primary: #000000;
+    --color-black-light: #222222;
+    --color-white-dark: #F8F8F8;
+}
 
+/* Global */
 body {
-    background-color: #ff0000;
-    color: #fff;
+    background-color: var(--color-red-light);
     font-family: 'Faustina', sans-serif;
-}
-.container {
-    background-color: #F8F8F8;
-    color: #000;
-}
-.btn {
-    border-radius: 1px;
 }
 h1, h2, h3, .lead, small, a {
     font-family: 'Graduate', sans-serif;
 }
+h1, h2, h3 {
+    color: var(--color-red-primary);
+}
 h1 {
-    color: #ff0000;
-    text-shadow: 2px 2px 2px #222222;
+    text-shadow: 2px 2px 2px var(--color-black-light);
 }
 h1:hover {
-    text-shadow: 3px 3px 3px #222222;
+    text-shadow: 3px 3px 3px var(--color-black-light);
+}
+h2 {
+    text-shadow: 1px 1px 1px var(--color-black-light);
 }
 h2:hover {
-    text-shadow: 2px 2px 2px #222222;
+    text-shadow: 2px 2px 2px var(--color-black-light);
 }
+
+/* Helper Classes */
 a.unstyled_link:hover {
     text-decoration: none;
 }
-h2 {
-    color: #ff0000;
-    text-shadow: 1px 1px 1px #222222;
-}
+
+/* Comments */
 .comment {
     font-size: 1.5em;
 }
@@ -46,6 +52,30 @@ h2 {
 }
 b {
     display: none;
+}
+
+/* Print */
+.print_container {
+    text-align: center;
+    padding-top: 1em;
+}
+.print_container img {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Bootstrap Overrides */
+.container {
+    background-color: var(--color-white-dark);
+    color: var(--color-black-primary);
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+}
+.btn {
+    border-radius: 1px;
+}
+.btn-danger:hover {
+    background-color: var(--color-red-light);
 }
 
 /* Orange Action Bootstrap-Styled Button */
@@ -80,7 +110,4 @@ b {
     color: #333 !important; 
     text-shadow: 0 1px 1px rgba(255, 255, 255, 0.00); 
     -webkit-font-smoothing: antialiased;
-}
-.btn-danger:hover {
-    background-color: #ff0000;
 }
