@@ -1,12 +1,12 @@
 <div class="container headlines_container">
-	<?php foreach ($posts as $key => $post) { ?>
-		<?php if ($key % 2 == 0) { ?> <div class="row"> <?php } ?>
-			<div class="col-md-2">
+	<?php foreach ($posts as $post) { ?>
+		<div class="row">
+			<div class="col-md-3 col-md-push-1">
 				<a href="<?= base_url() ?>news/<?= BOARD ?>/<?= $post->no ?>/<?= $post->semantic_url ?>">
 					<img class="headline_image img-thumbnail" src="<?= base_url() ?>uploads/<?= BOARD ?>_<?= $post->tim . $post->ext ?>"/>
 				</a>
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-7 col-md-push-1">
 				<!-- Subject or comment exists -->
 				<?php if (isset($post->sub) || isset($post->com)) { ?>
 					<!-- Sticky -->
@@ -27,7 +27,8 @@
 					<!-- Unknown Kek -->
 				<?php } ?>
 			</div>
-		<?php if ($key % 2 != 0) { ?> </div> <?php } ?>
+		</div>
+		<hr/>
 	<?php } ?>
 
 	<p class="text-center">
