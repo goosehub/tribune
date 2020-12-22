@@ -27,5 +27,9 @@
     <!-- Thumbnail -->
     <meta property="og:image" content="<?=base_url()?>resources/img/placeholder.png" />
 
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Faustina&family=Graduate&display=swap" rel="stylesheet">
+
   </head>
   <body>

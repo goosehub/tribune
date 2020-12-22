@@ -11,6 +11,42 @@ body {
 .btn {
     border-radius: 1px;
 }
+h1, h2, h3, .lead, small, a {
+    font-family: 'Graduate', sans-serif;
+}
+h1 {
+    color: #ff0000;
+    text-shadow: 2px 2px 2px #222222;
+}
+h1:hover {
+    text-shadow: 3px 3px 3px #222222;
+}
+h2:hover {
+    text-shadow: 2px 2px 2px #222222;
+}
+a.unstyled_link:hover {
+    text-decoration: none;
+}
+h2 {
+    color: #ff0000;
+    text-shadow: 1px 1px 1px #222222;
+}
+.comment {
+    font-size: 1.5em;
+    font-family: 'Faustina', sans-serif;
+}
+.quote {
+    display: block;
+    margin-left: 1em;
+    color: #789922;
+    font-family: 'Graduate', sans-serif;
+}
+.quotelink {
+    display: none;
+}
+b {
+    display: none;
+}
 
 /* Orange Action Bootstrap-Styled Button */
 .btn-action {   
@@ -47,9 +83,4 @@ body {
 }
 .btn-danger:hover {
     background-color: #ff0000;
-}
-
-h2 {
-    color: #ff0000;
-    text-shadow: 1px 1px 1px #222222;
 }

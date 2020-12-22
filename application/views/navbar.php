@@ -1,7 +1,9 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-12">
-			<h1 class="text-center">[s4s] Tribune</h1>
+			<a class="unstyled_link" href="<?= base_url() ?>">
+				<h1 class="text-center">[s4s] Tribune</h1>
+			</a>
 			<p class="text-center">
 				<a href="#">
 					Online

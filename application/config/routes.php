@@ -10,6 +10,7 @@ $route['foobar'] = 'main';
 $route['listing'] = "main/index";
 $route['listing/(:any)'] = "main/index/$1";
 $route['listing/(:any)/(:any)'] = "main/index/$1/$2";
+$route['news/(:any)/(:any)'] = "main/article/$1/$2";
 $route['news/(:any)/(:any)/(:any)'] = "main/article/$1/$2/$3";
 $route['cron/(:any)'] = "cron/index/$1";
 

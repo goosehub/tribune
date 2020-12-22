@@ -25,7 +25,7 @@ class Main extends CI_Controller {
         $this->load->view('templates/footer', $data);
     }
 
-    public function article($board, $thread_no, $thread_slug)
+    public function article($board, $thread_no, $thread_slug = '')
     {
         $data['thread'] = $this->fourchan->get_thread($board, $thread_no);
 

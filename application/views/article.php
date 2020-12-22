@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container article_container">
 	<div class="row">
 		<div class="col-md-10 col-md-push-1">
 			<?php foreach ($thread->posts as $key => $post) { ?>
@@ -12,14 +12,15 @@
 						</p>
 						<p class="lead"><?= isset($post->com) ? $post->com : '' ?></p>
 					</div>
-				<?php } else if (isset($post->com) && strlen($post->com) > COMMENT_LENGTH_FOR_BREAK) { ?>
-					<p><?= $post->com ?></p>
 				<?php } else if (isset($post->com)) { ?>
-					<span><?= $post->com ?></span>
+					<?php if (isset($post->com) && strlen($post->com) > COMMENT_LENGTH_FOR_BREAK) { ?>
+						<br>
+					<?php } ?>
+					<span class="comment"><?= $post->com ?></span>
 				<?php } ?>
 			<?php } ?>
 		</div>
 	</div>
-	<br/>
-	<br/>
+	<br>
+	<br>
 </div>
