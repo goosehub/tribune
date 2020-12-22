@@ -10,7 +10,7 @@
 							<span>|</span>
 							<small>Updated <?= isset($post->now) ? $post->now : '' ?></small>
 						</p>
-						<img alt="<?= $this->helper->get_headline($post); ?>" class="article_image img-thumbnail" src="<?= base_url() ?>uploads/<?= BOARD ?>_<?= $post->tim . $post->ext ?>"/>
+						<img alt="<?= strip_tags($this->helper->get_headline($post)); ?>" class="article_image img-thumbnail" src="<?= base_url() ?>uploads/<?= BOARD ?>_<?= $post->tim . $post->ext ?>"/>
 						<p class="lead"><?= isset($post->com) ? $post->com : '' ?></p>
 					</div>
 				<?php } else if (isset($post->com)) { ?>

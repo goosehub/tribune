@@ -7,6 +7,7 @@ class Main extends CI_Controller {
     {
         parent::__construct();
         $this->load->model('fourchan', '', TRUE);
+        $this->load->model('youtube', '', TRUE);
         $this->load->model('helper', '', TRUE);
     }
 
@@ -18,6 +19,7 @@ class Main extends CI_Controller {
         $data['posts'] = $this->fourchan->get_original_posts($offset, $limit);
 
         $data['page_title'] = '[s4s] Tribune';
+        $data['youtube_id'] = $this->youtube->random_youtube_id();
         $this->load->view('templates/header', $data);
         $this->load->view('navbar', $data);
         $this->load->view('headlines', $data);
@@ -29,6 +31,7 @@ class Main extends CI_Controller {
         $data['thread'] = $this->fourchan->get_thread($board, $thread_no);
 
         $data['page_title'] = '[s4s] Tribune';
+        $data['youtube_id'] = $this->youtube->random_youtube_id();
         $this->load->view('templates/header', $data);
         $this->load->view('navbar', $data);
         $this->load->view('article', $data);
@@ -38,6 +41,7 @@ class Main extends CI_Controller {
     public function radio()
     {
         $data['page_title'] = '[s4s] Radio';
+        $data['youtube_id'] = $this->youtube->random_youtube_id();
         $this->load->view('templates/header', $data);
         $this->load->view('navbar', $data);
         $this->load->view('extras/radio', $data);
@@ -48,6 +52,7 @@ class Main extends CI_Controller {
     public function print_media()
     {
         $data['page_title'] = '[s4s] Print';
+        $data['youtube_id'] = $this->youtube->random_youtube_id();
         $this->load->view('templates/header', $data);
         $this->load->view('navbar', $data);
         $this->load->view('extras/print', $data);
@@ -57,6 +62,7 @@ class Main extends CI_Controller {
     public function weather()
     {
         $data['page_title'] = '[s4s] Weather';
+        $data['youtube_id'] = $this->youtube->random_youtube_id();
         $this->load->view('templates/header', $data);
         $this->load->view('navbar', $data);
         $this->load->view('extras/weather', $data);
@@ -66,6 +72,7 @@ class Main extends CI_Controller {
     public function markets()
     {
         $data['page_title'] = '[s4s] Markets';
+        $data['youtube_id'] = $this->youtube->random_youtube_id();
         $this->load->view('templates/header', $data);
         $this->load->view('navbar', $data);
         $this->load->view('extras/markets', $data);
@@ -75,6 +82,7 @@ class Main extends CI_Controller {
     public function election()
     {
         $data['page_title'] = '[s4s] Election';
+        $data['youtube_id'] = $this->youtube->random_youtube_id();
         $this->load->view('templates/header', $data);
         $this->load->view('navbar', $data);
         $this->load->view('extras/election', $data);
@@ -84,6 +92,7 @@ class Main extends CI_Controller {
     public function travel()
     {
         $data['page_title'] = '[s4s] Travel';
+        $data['youtube_id'] = $this->youtube->random_youtube_id();
         $this->load->view('templates/header', $data);
         $this->load->view('navbar', $data);
         $this->load->view('extras/travel', $data);
@@ -93,6 +102,7 @@ class Main extends CI_Controller {
     public function spiderman()
     {
         $data['page_title'] = '[s4s] Spiderman';
+        $data['youtube_id'] = $this->youtube->random_youtube_id();
         $this->load->view('templates/header', $data);
         $this->load->view('navbar', $data);
         $this->load->view('extras/spiderman', $data);

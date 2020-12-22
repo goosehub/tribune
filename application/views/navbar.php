@@ -12,6 +12,15 @@
 				<a href="<?= base_url() ?>radio">
 					Radio
 				</a>
+				<span class="radio_button_parent">
+					<span class="radio_button_play_icon glyphicon glyphicon-play-circle" aria-hidden="true"></span>
+					<iframe class="radio_button_iframe"
+						src="https://www.youtube.com/embed/<?= $youtube_id ?>"
+						frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen>
+					</iframe>
+				</span>
 				<span class="nav_divider">|</span>
 				<a href="<?= base_url() ?>print">
 					Print

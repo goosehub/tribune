@@ -5,8 +5,6 @@
 High Priority
 
 Moderate Priority
-	Stickies
-	Radio
 	Weather
 	Markets
 	Election
@@ -15,8 +13,8 @@ Moderate Priority
     
 Low Priority
 	Ads
-	Per Site
 	Word swaps
+	Stickies
 
 No Priority
 

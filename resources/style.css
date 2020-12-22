@@ -64,6 +64,35 @@ b {
     margin: 0 auto;
 }
 
+/* Radio */
+.radio_button_parent {
+    width: 1em;
+    height: 1em;
+    background-color: var(--color-red-primary);
+    border: 1px solid var(--color-red-primary);
+    border-radius: 1em;
+}
+.radio_button_play_icon {
+    position: relative;
+    width: 0;
+    pointer-events: none
+}
+.radio_button_parent:before {
+    content: "\e029";
+}
+.radio_button_iframe {
+    width: 1em;
+    height: 1em;
+    border-radius: 1em;
+    margin-bottom: -0.1em;
+    margin-left: 0.1em;
+    opacity: 0.1;
+}
+.radio_iframe {
+    width: 100%;
+    height: 70vh;
+}
+
 /* Bootstrap Overrides */
 .container {
     background-color: var(--color-white-dark);
