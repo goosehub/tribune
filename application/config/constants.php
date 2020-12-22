@@ -2,7 +2,9 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 // Main
+define('BOARD', 's4s');
 define('PER_PAGE', 10);
+define('COMMENT_LENGTH_FOR_BREAK', 100);
 
 // User Auth
 define('PASSWORD_OVERRIDE', false); // Dev and emergency use only

@@ -6,7 +6,9 @@ class Cron extends CI_Controller {
     protected $boards = ['s4s'];
     protected $max_thread_size = 9999;
     protected $json_folder_path = 'application/json/';
+    protected $image_folder_path = 'uploads/';
     protected $api_base = 'https://a.4cdn.org/';
+    protected $image_api_base = 'https://i.4cdn.org/';
 
     function __construct() {
         parent::__construct();
@@ -36,6 +38,7 @@ class Cron extends CI_Controller {
         // Run cron
         echo 'Start of Cron - ' . time() . '<br>';
         $this->clear_json_files();
+        $this->clear_image_files();
         $this->generate_json_files();
         echo 'End of Cron - ' . time() . '<br>';
     }
@@ -49,6 +52,17 @@ class Cron extends CI_Controller {
             }
         }
     }
+
+    public function clear_image_files()
+    {
+        $files = glob($this->image_folder_path . '*');
+        foreach ($files as $file) {
+            if (is_file($file)) {
+                unlink($file);
+            }
+        }
+    }
+
     public function generate_json_files()
     {
         foreach ($this->boards as $board) {
@@ -58,8 +72,13 @@ class Cron extends CI_Controller {
                     if ($page_thread->replies > $this->max_thread_size) {
                         continue;
                     }
-                    $thread = $this->get_from_api($board . '/thread/' . $page_thread->no . '.json', true);
-                    file_put_contents($this->json_folder_path . $board . '_' . $page_thread->no . '.json', $thread);
+                    $rawThread = $this->get_from_api($board . '/thread/' . $page_thread->no . '.json', true);
+                    file_put_contents($this->json_folder_path . $board . '_' . $page_thread->no . '.json', $rawThread);
+                    $thread = json_decode($rawThread);
+                    $op = $thread->posts[0];
+                    $opImage = $op->tim . $op->ext;
+                    $imageContents = file_get_contents($this->image_api_base . $board . '/' . $opImage);
+                    file_put_contents($this->image_folder_path . $board . '_' . $opImage, $imageContents);
                 }
             }
         }

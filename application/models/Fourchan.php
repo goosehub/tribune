@@ -21,7 +21,7 @@ Class fourchan extends CI_Model
         for ($i = $offset; $i < $limit + $offset; $i++) {
             // Catch
             if (!isset($json_files[$i])) {
-                dd('get_original_posts limit broke');
+                // dd('get_original_posts limit broke');
                 break;
             }
             $json_file = $json_files[$i];
