@@ -29,6 +29,16 @@
 				<a href="<?= base_url() ?>weather">
 					Weather
 				</a>
+				<span class="weather">
+					(
+					<span class="weather_type" style="color: #<?= $weather_color ?>">
+						<?= ucfirst($weather_type); ?>
+					</span>
+					/
+					<span class="weather_temp" style="color: #<?= $temp_color_hex ?>">
+						<?= $weather_temp; ?>°
+					</span>
+					)
 				<span class="nav_divider">|</span>
 				<a href="<?= base_url() ?>markets">
 					Markets

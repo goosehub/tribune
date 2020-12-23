@@ -54,6 +54,11 @@ b {
     display: none;
 }
 
+/* Weather */
+.weather_type, .weather_temp {
+    text-shadow: 0.5px 0.5px 0.5px var(--color-black-light);
+}
+
 /* Print */
 .print_container {
     text-align: center;

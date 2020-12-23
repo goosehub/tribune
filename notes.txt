@@ -3,67 +3,23 @@
 ==========================================================================================
 
 High Priority
-
-Moderate Priority
-	Weather
 	Markets
 	Election
 	Travel
 	Spiderman
+
+Moderate Priority
+	Handle site during cron or make seemless
+	Favicon
+	Logo
+	Word swaps
+	Weather icons and optimize
     
 Low Priority
 	Ads
-	Word swaps
 	Stickies
 
 No Priority
-
-==========================================================================================
-	Process
-==========================================================================================
-
-Every 10 minutes archive state of /s4s/ into the system
-Parse for each of the systems
-Rude words are auto replaced
-Every OP post is a headline and cover image
-Each post is part of the article
-Additional images are on the side with message as caption
-Stickies are important news
-
-==========================================================================================
-	API
-==========================================================================================
-
-https://a.4cdn.org/s4s/threads.json
-https://a.4cdn.org/s4s/1.json
-https://a.4cdn.org/s4s/thread/9222222.json
-post
-	no
-	is_sticky
-	time
-	name
-	comment
-	file and ext
-
-==========================================================================================
-	Sections
-==========================================================================================
-
-Online
-Radio
-Print
-Weather
-Markets
-Election
-Travel
-Spiderman
-Ads
-
-==========================================================================================
-	Spiderman
-==========================================================================================
-
-Images of any post or filename that contain the word spider
 
 ==========================================================================================
 	Markets
@@ -92,39 +48,6 @@ Winner chosen every month to serve a one month term
 
 Highlight posts that link off board
 >>>/x/1208196
-
-==========================================================================================
-	Weather
-==========================================================================================
-
-Temperature = total number of fortunes
-
-Foggy
-	Your fortune: Reply hazy, try again
-Clear
-	Your fortune: Outlook good
-Windy
-	Your fortune: Excellent Luck
-Cloudy
-	Your fortune: Good Luck
-Overcast
-	Your fortune: Average Luck
-Rain
-	Your fortune: Bad Luck
-Snow
-	Your fortune: Good news will come to you by mail
-Hail
-	Your fortune: （　´_ゝ`）ﾌｰﾝ
-Blizzard
-	Your fortune: ｷﾀ━━━━━━(ﾟ∀ﾟ)━━━━━━ !!!!
-Storm
-	Your fortune: You will meet a dark handsome stranger
-Tornado
-	Your fortune: Very Bad Luck
-Eclipse
-	Your fortune: Godly Luck
-Unknown
-	Your fortune: Better not tell you now
 
 ==========================================================================================
 	Ads

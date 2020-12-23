@@ -25,6 +25,9 @@ Class fourchan extends CI_Model
                 break;
             }
             $json_file = $json_files[$i];
+            if (strpos($json_file, 'fortunes') !== false) {
+                continue;
+            }
             $json_contents = file_get_contents($this->json_folder . $json_file);
             $thread = json_decode($json_contents);
             $threads[] = $thread->posts[0];
@@ -35,6 +38,12 @@ Class fourchan extends CI_Model
     function get_thread($board, $thread_no)
     {
         $json_contents = file_get_contents($this->json_folder . $board . '_' . $thread_no . '.json');
+        return json_decode($json_contents);
+    }
+
+    function get_fortunes($board)
+    {
+        $json_contents = file_get_contents($this->json_folder . $board . '_fortunes.json');
         return json_decode($json_contents);
     }
 
