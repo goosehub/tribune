@@ -76,6 +76,21 @@ b {
     height: 70vh;
 }
 
+/* Election */
+.election_chart {
+    width: 100%;
+    height: 70vh;
+}
+.election_leader, .election_runnerup {
+    text-shadow: 0.5px 0.5px 0.5px var(--color-black-light);
+}
+.election_leader {
+    color: var(--color-red-primary);
+}
+.election_runnerup {
+    color: var(--color-blue-primary);
+}
+
 /* Print */
 .print_container {
     text-align: center;

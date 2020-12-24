@@ -24,6 +24,7 @@ Class helper extends CI_Model
         $data = $this->get_radio($data);
         $data = $this->get_weather($data);
         $data = $this->get_markets($data);
+        $data = $this->get_votes($data);
         return $data;
     }
 
@@ -78,6 +79,12 @@ Class helper extends CI_Model
             'septs' => $septs,
         ];
         return $data;
+    }
+
+    function get_votes($data)
+    {
+        $data['votes'] = $this->fourchan->get_votes(BOARD);
+        return (array)$data;
     }
 }
 ?>

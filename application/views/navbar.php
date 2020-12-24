@@ -29,7 +29,7 @@
 				<a href="<?= base_url() ?>weather">
 					Weather
 				</a>
-				<span class="weather">
+				<span class="weather_navbar">
 					(
 					<span class="weather_type" style="color: #<?= $weather_color ?>">
 						<?= ucfirst($weather_type); ?>
@@ -43,7 +43,7 @@
 				<a href="<?= base_url() ?>markets">
 					Markets
 				</a>
-				<span class="markets">
+				<span class="markets_navbar">
 					(
 					<span class="market_dubs">
 						<?= $current_markets->dubs ?> Dubs
@@ -58,6 +58,17 @@
 				<a href="<?= base_url() ?>election">
 					Election
 				</a>
+				<span class="election_navbar">
+					(
+					<span class="election_leader">
+						<?= COUNT($votes) > 1 ? array_keys($votes)[0] : 'Anon' ?>
+					</span>
+					/
+					<span class="election_runnerup">
+						<?= COUNT($votes) > 2 ? array_keys($votes)[1] : 'Anon' ?>
+					</span>
+					)
+				</span>
 				<span class="nav_divider">|</span>
 				<a href="<?= base_url() ?>travel">
 					Travel

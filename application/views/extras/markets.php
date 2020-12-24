@@ -1,13 +1,10 @@
 <div class="container">
     <canvas id="markets_chart" class="markets_chart"></canvas>
+    <hr>
     <p class="text-center">
-        Times are EST. Markets are always open. Click on label to exclude from chart. Always check gets.
+        Times are GMT. Markets are always open. Click on label to exclude from chart. Always check gets.
     </p>
 </div>
-
-        <?php foreach ($markets as $key => $data) { ?>
-            <?php // dd($key); ?>,
-        <?php } ?>
 
 <!-- Chart.js -->
 <script src="<?=base_url()?>resources/chartjs/Chart.min.js"></script>
@@ -36,7 +33,7 @@ function getColor(type) {
 }
 
 var ctx = document.getElementById('markets_chart').getContext('2d');
-var myChart = new Chart(ctx, {
+var markets_chart = new Chart(ctx, {
   type: 'line',
   data: {
     labels: [

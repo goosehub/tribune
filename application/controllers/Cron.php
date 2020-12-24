@@ -34,7 +34,7 @@ class Cron extends CI_Controller {
         'septs' => 0,
         'octs' => 0,
     ];
-
+    protected $votes = [];
     function __construct() {
         parent::__construct();
     }
@@ -89,6 +89,7 @@ class Cron extends CI_Controller {
         }
         $this->create_fortunes_json($thread);
         $this->create_gets_json($thread);
+        $this->create_votes_json($thread);
     }
 
     public function create_thread_json($page_thread, $thread_json_string)
@@ -109,6 +110,7 @@ class Cron extends CI_Controller {
         foreach ($thread->posts as $post) {
             $this->increment_fortunes($post);
             $this->increment_gets($post);
+            $this->increment_votes($post);
         }
     }
 
@@ -200,6 +202,31 @@ class Cron extends CI_Controller {
         $this->gets['singles']++;
     }
 
+    public function increment_votes($post)
+    {
+        if (!isset($post->com)) {
+            return;
+        }
+        // Use lowercase and include space at end of trigger word
+        // $trigger_string = 'vote ';
+        $trigger_string = ' i ';
+        $comment_lowercase = strtolower($post->com);
+        if (strpos($comment_lowercase, $trigger_string) === false) {
+            return;
+        }
+        $string = preg_replace('/[^A-Za-z0-9\- ]/', '', $comment_lowercase);
+        $string_split = preg_split('/' . $trigger_string . '/', $string);
+        if (count($string_split) < 2) {
+            return;
+        }
+        $word_split = explode(' ', $string_split[1]);
+        $candidate = $word_split[0];
+        if (!isset($this->votes[$candidate])) {
+            $this->votes[$candidate] = 0;
+        }
+        $this->votes[$candidate]++;
+    }
+
     public function create_fortunes_json()
     {
         $fortune_json_string = json_encode($this->fortunes);
@@ -218,6 +245,15 @@ class Cron extends CI_Controller {
         $gets_object->{$date} = $this->gets;
         $new_gets_json_string = json_encode($gets_object);
         file_put_contents($gets_json_file_path, $new_gets_json_string);
+    }
+
+    public function create_votes_json()
+    {
+        uasort($this->votes, function($a, $b) {
+            return strcmp($b, $a);
+        });
+        $votes_json_string = json_encode($this->votes);
+        file_put_contents($this->json_folder_path . BOARD . '_votes.json', $votes_json_string);
     }
 
     public function clear_json_files()

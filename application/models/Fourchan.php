@@ -25,10 +25,7 @@ Class fourchan extends CI_Model
                 break;
             }
             $json_file = $json_files[$i];
-            if (strpos($json_file, 'fortunes') !== false) {
-                continue;
-            }
-            if (strpos($json_file, 'gets') !== false) {
+            if ($this->exclude_file($json_file)) {
                 continue;
             }
             $json_contents = file_get_contents($this->json_folder . $json_file);
@@ -36,6 +33,20 @@ Class fourchan extends CI_Model
             $threads[] = $thread->posts[0];
         }
         return $threads;
+    }
+
+    function exclude_file($json_file)
+    {
+        if (strpos($json_file, 'fortunes') !== false) {
+            return true;
+        }
+        if (strpos($json_file, 'gets') !== false) {
+            return true;
+        }
+        if (strpos($json_file, 'votes') !== false) {
+            return true;
+        }
+        return false;
     }
 
     function get_thread($board, $thread_no)
@@ -54,6 +65,12 @@ Class fourchan extends CI_Model
     {
         $json_contents = file_get_contents($this->json_folder . $board . '_gets.json');
         return json_decode($json_contents);
+    }
+
+    function get_votes($board)
+    {
+        $json_contents = file_get_contents($this->json_folder . $board . '_votes.json');
+        return (array)json_decode($json_contents);
     }
 
 }
