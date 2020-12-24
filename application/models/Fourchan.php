@@ -28,6 +28,9 @@ Class fourchan extends CI_Model
             if (strpos($json_file, 'fortunes') !== false) {
                 continue;
             }
+            if (strpos($json_file, 'gets') !== false) {
+                continue;
+            }
             $json_contents = file_get_contents($this->json_folder . $json_file);
             $thread = json_decode($json_contents);
             $threads[] = $thread->posts[0];

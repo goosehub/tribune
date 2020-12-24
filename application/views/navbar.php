@@ -9,6 +9,10 @@
 					Online
 				</a>
 				<span class="nav_divider">|</span>
+				<a href="<?= base_url() ?>print">
+					Print
+				</a>
+				<span class="nav_divider">|</span>
 				<a href="<?= base_url() ?>radio">
 					Radio
 				</a>
@@ -21,10 +25,6 @@
 						allowfullscreen>
 					</iframe>
 				</span>
-				<span class="nav_divider">|</span>
-				<a href="<?= base_url() ?>print">
-					Print
-				</a>
 				<span class="nav_divider">|</span>
 				<a href="<?= base_url() ?>weather">
 					Weather
