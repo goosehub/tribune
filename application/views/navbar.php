@@ -43,6 +43,17 @@
 				<a href="<?= base_url() ?>markets">
 					Markets
 				</a>
+				<span class="markets">
+					(
+					<span class="market_dubs">
+						<?= $current_markets->dubs ?> Dubs
+					</span>
+					/
+					<span class="market_trips">
+						<?= $current_markets->trips ?> Trips
+					</span>
+					)
+				</span>
 				<span class="nav_divider">|</span>
 				<a href="<?= base_url() ?>election">
 					Election

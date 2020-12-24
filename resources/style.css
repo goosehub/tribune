@@ -6,6 +6,8 @@
     --color-black-primary: #000000;
     --color-black-light: #222222;
     --color-white-dark: #F8F8F8;
+    --color-blue-primary: #0000FF;
+    --color-green-primary: #008000;
 }
 
 /* Global */
@@ -56,6 +58,17 @@ b {
 
 /* Weather */
 .weather_type, .weather_temp {
+    text-shadow: 0.5px 0.5px 0.5px var(--color-black-light);
+}
+
+/* Markets */
+.market_dubs {
+    color: var(--color-green-primary);
+}
+.market_trips {
+    color: var(--color-red-primary);
+}
+.market_dubs, .market_trips {
     text-shadow: 0.5px 0.5px 0.5px var(--color-black-light);
 }
 

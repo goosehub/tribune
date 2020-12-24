@@ -17,13 +17,19 @@ Class helper extends CI_Model
         else {
             return $post->com;
         }
-
     }
 
     function global_data_set($data)
     {
-        $data['youtube_id'] = $this->youtube->random_youtube_id();
+        $data = $this->get_radio($data);
         $data = $this->get_weather($data);
+        $data = $this->get_markets($data);
+        return $data;
+    }
+
+    function get_radio($data)
+    {
+        $data['youtube_id'] = $this->youtube->random_youtube_id();
         return $data;
     }
 
@@ -45,6 +51,15 @@ Class helper extends CI_Model
         }
         $temp_color_base = dechex($data['weather_temp']) . '0000';
         $data['temp_color_hex'] = substr($temp_color_base, 0, 6);
+        return $data;
+    }
+
+    function get_markets($data)
+    {
+        $data['markets'] = $this->fourchan->get_gets(BOARD);
+        end($data['markets']);
+        $key = key($data['markets']);
+        $data['current_markets'] = $data['markets']->{$key};
         return $data;
     }
 }

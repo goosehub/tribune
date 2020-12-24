@@ -50,5 +50,11 @@ Class fourchan extends CI_Model
         return json_decode($json_contents);
     }
 
+    function get_gets($board)
+    {
+        $json_contents = file_get_contents($this->json_folder . $board . '_gets.json');
+        return json_decode($json_contents);
+    }
+
 }
 ?>

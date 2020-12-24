@@ -216,7 +216,7 @@ class Cron extends CI_Controller {
         $current_gets_json_string = file_get_contents($gets_json_file_path);
         $gets_object = json_decode($current_gets_json_string);
         $date = date('Y-m-d-H');
-        $gets_object[$date] = $this->gets;
+        $gets_object->{$date} = $this->gets;
         $new_gets_json_string = json_encode($gets_object);
         file_put_contents($gets_json_file_path, $new_gets_json_string);
     }
@@ -225,6 +225,9 @@ class Cron extends CI_Controller {
     {
         $files = glob($this->json_folder_path . '*');
         foreach ($files as $file) {
+            if (strpos($file, 'gets') !== false) {
+                continue;
+            }
             if (is_file($file)) {
                 unlink($file);
             }
