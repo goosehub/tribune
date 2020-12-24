@@ -60,6 +60,23 @@ Class helper extends CI_Model
         end($data['markets']);
         $key = key($data['markets']);
         $data['current_markets'] = $data['markets']->{$key};
+        $dubs = $trips = $quads = $quints = $sexes = $septs = [];
+        foreach ($data['markets'] as $market) {
+            $dubs[] = $market->dubs;
+            $trips[] = $market->trips;
+            $quads[] = $market->quads;
+            $quints[] = $market->quints;
+            $sexes[] = $market->sexes;
+            $septs[] = $market->septs;
+        }
+        $data['gets'] = [
+            'dubs' => $dubs,
+            'trips' => $trips,
+            'quads' => $quads,
+            'quints' => $quints,
+            'sexes' => $sexes,
+            'septs' => $septs,
+        ];
         return $data;
     }
 }

@@ -63,13 +63,17 @@ b {
 
 /* Markets */
 .market_dubs {
-    color: var(--color-green-primary);
+    color: var(--color-red-primary);
 }
 .market_trips {
-    color: var(--color-red-primary);
+    color: var(--color-green-primary);
 }
 .market_dubs, .market_trips {
     text-shadow: 0.5px 0.5px 0.5px var(--color-black-light);
+}
+.markets_chart {
+    width: 100%;
+    height: 70vh;
 }
 
 /* Print */

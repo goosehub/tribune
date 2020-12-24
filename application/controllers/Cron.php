@@ -32,7 +32,6 @@ class Cron extends CI_Controller {
         'quints' => 0,
         'sexes' => 0,
         'septs' => 0,
-        'septs' => 0,
         'octs' => 0,
     ];
 
