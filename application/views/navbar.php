@@ -61,22 +61,24 @@
 				<span class="election_navbar">
 					(
 					<span class="election_leader">
-						<?= COUNT($votes) > 1 ? array_keys($votes)[0] : 'Anon' ?>
+						<?= COUNT($votes) >= 1 ? array_keys($votes)[0] : 'Anon' ?>
 					</span>
 					/
 					<span class="election_runnerup">
-						<?= COUNT($votes) > 2 ? array_keys($votes)[1] : 'Anon' ?>
+						<?= COUNT($votes) >= 1 ? array_keys($votes)[1] : 'Anon' ?>
 					</span>
 					)
 				</span>
-				<span class="nav_divider">|</span>
+				<!-- Got lazy -->
+<!-- 				<span class="nav_divider">|</span>
 				<a href="<?= base_url() ?>travel">
 					Travel
-				</a>
-				<span class="nav_divider">|</span>
+				</a> -->
+				<!-- Soon, spiderman -->
+<!-- 				<span class="nav_divider">|</span>
 				<a href="<?= base_url() ?>spiderman">
 					Spiderman
-				</a>
+				</a> -->
 			</p>
 		</div>
 	</div>

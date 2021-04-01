@@ -120,14 +120,14 @@
 				</h2>
 				<img alt="2014 April" class="img-thumbnail print_issue_preview" src="resources/print/2013_newspaper/s4stribune007.jpg"/>
 			</a>
-			<a class="unstyled_link" href="print/jameson_reading.jpg">
-			</div>
-			<div class="col-md-3">
+		</div>
+		<div class="col-md-3">
+			<span>
 				<h2>
 					By J. Jonah Jameson and [s4s]
 				</h2>
 				<img alt="2014 April" class="img-thumbnail print_issue_preview" src="resources/img/jameson/reading.jpg"/>
-			</a>
+			</span>
 		</div>
 	</div>
 

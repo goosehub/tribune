@@ -10,7 +10,7 @@
     <li>Configure database connection in auth.php</li>
     <li>You may need to add your domain under base_url in config/config.php</li>
     <li>You may need to disable HTTPS redirect in config/autoload.php</li>
-    <li>Set a cron for application/cron.php or alternatively, hit up localhost/landgrab/cron/1234?cron=name_of_method to trigger a cron (Change the token under config/constants.php and cron.php for production)</li>
+    <li>Set a cron for application/cron.php or alternatively, hit up localhost/s4stribune/cron/1234 to trigger the cron (Change the token under config/constants.php and cron.php for production)</li>
 </ul>
 
 <h2>Board specific set up</h2>

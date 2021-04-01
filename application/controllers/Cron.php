@@ -208,8 +208,8 @@ class Cron extends CI_Controller {
             return;
         }
         // Use lowercase and include space at end of trigger word
-        // $trigger_string = 'vote ';
-        $trigger_string = ' i ';
+        $trigger_string = 'vote ';
+        // $trigger_string = ' i ';
         $comment_lowercase = strtolower($post->com);
         if (strpos($comment_lowercase, $trigger_string) === false) {
             return;
