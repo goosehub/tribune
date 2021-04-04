@@ -65,7 +65,7 @@
 					</span>
 					/
 					<span class="election_runnerup">
-						<?= COUNT($votes) >= 1 ? array_keys($votes)[1] : 'Anon' ?>
+						<?= COUNT($votes) >= 2 ? array_keys($votes)[1] : 'Anon' ?>
 					</span>
 					)
 				</span>
