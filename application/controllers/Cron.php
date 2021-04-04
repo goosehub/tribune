@@ -8,7 +8,7 @@ class Cron extends CI_Controller {
     protected $image_folder_path = 'uploads/';
     protected $api_base = 'https://a.4cdn.org/';
     protected $image_api_base = 'https://i.4cdn.org/';
-    protected $pages_to_pull = 1;
+    protected $pages_to_pull = 100;
     protected $fortunes = [
         'f51c6a---foggy---reply_hazy' => 0,
         'fd4d32---windy---excellent_luck' => 0,
