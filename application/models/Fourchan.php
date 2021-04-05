@@ -53,8 +53,9 @@ Class fourchan extends CI_Model
     {
         $filepath = $this->json_folder . $board . '_' . $thread_no . '.json';
         if (!file_exists($filepath)) {
-            echo 'Thread has been pruned';
-            die();
+            return [];
+            // echo 'Thread has been pruned';
+            // die();
         }
         $json_contents = file_get_contents($filepath);
         return json_decode($json_contents);
@@ -64,8 +65,9 @@ Class fourchan extends CI_Model
     {
         $filepath = $this->json_folder . $board . '_fortunes.json';
         if (!file_exists($filepath)) {
-            echo 'Thread has been pruned';
-            die();
+            return [];
+            // echo 'Thread has been pruned';
+            // die();
         }
         $json_contents = file_get_contents($filepath);
         return json_decode($json_contents);
@@ -75,8 +77,9 @@ Class fourchan extends CI_Model
     {
         $filepath = $this->json_folder . $board . '_gets.json';
         if (!file_exists($filepath)) {
-            echo 'Thread has been pruned';
-            die();
+            return [];
+            // echo 'Thread has been pruned';
+            // die();
         }
         $json_contents = file_get_contents($filepath);
         return json_decode($json_contents);
@@ -86,8 +89,9 @@ Class fourchan extends CI_Model
     {
         $filepath = $this->json_folder . $board . '_votes.json';
         if (!file_exists($filepath)) {
-            echo 'Thread has been pruned';
-            die();
+            return [];
+            // echo 'Thread has been pruned';
+            // die();
         }
         $json_contents = file_get_contents($filepath);
         return (array)json_decode($json_contents);
